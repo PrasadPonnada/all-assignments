@@ -19,7 +19,9 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors');
 const app = express();
+app.use(cors());
 
 app.get('/files', (req, res) => {
   fs.readdir(path.join(__dirname, './files/'), (err, files) => {
@@ -46,3 +48,4 @@ app.all('*', (req, res) => {
 });
 
 module.exports = app;
+app.listen(3000, () => console.log('Listening on 3000 Port'));
