@@ -1,1 +1,6 @@
 node_modules/
+week-7/assignment-1/dist/index.js
+week-7/assignment-1/dist/db/index.js
+week-7/assignment-1/dist/middleware/index.js
+week-7/assignment-1/dist/routes/auth.js
+week-7/assignment-1/dist/routes/todo.js
