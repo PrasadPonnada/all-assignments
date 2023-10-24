@@ -31,15 +31,7 @@ function ShowCourses() {
         Create Course
       </button>
       {courses.map((c) => (
-        <Course
-          key={c.id}
-          id={c.id}
-          title={c.title}
-          description={c.description}
-          price={c.price}
-          isPublished={c.isPublished}
-          navToEditCourse={navToEditCourse}
-        />
+        <Course course={c} key={c.id} navToEditCourse={navToEditCourse} />
       ))}
     </div>
   );
@@ -47,17 +39,19 @@ function ShowCourses() {
 
 function Course(props) {
   return (
-    <div>
+    <div style={{ backgroundColor: 'lightcoral ' }}>
       <br />
-      <b>Title: {props.title}</b>
+      <b>Title: {props.course.title}</b>
       <br />
-      <b>Description: {props.description}</b>
+      <b>Description: {props.course.description}</b>
       <br />
-      <b>Price: {props.price}</b>
+      <b>Price: {props.course.price}</b>
       <br />
-      <b>IsPublished: {props.isPublished.toString()}</b>
+      <b>IsPublished: {props.course.isPublished.toString()}</b>
       <br />
-      <button onClick={props.navToEditCourse.bind(this, props.id)}>Edit</button>
+      <button onClick={props.navToEditCourse.bind(this, props.course.id)}>
+        Edit
+      </button>
     </div>
   );
 }
